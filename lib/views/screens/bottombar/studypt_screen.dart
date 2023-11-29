@@ -30,7 +30,7 @@ class _StudyPtScreenState extends State<StudyPtScreen> {
     chatGPT = OpenAI.instance.build(
         // token: dotenv.env["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"],
         token: "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",
-        // baseOption: HttpSetup(receiveTimeout: 60000)
+        // baseOption: HttpSetup(receiveTimeout: 6000);
       baseOption: HttpSetup(receiveTimeout: Duration(seconds: 10))
     );
     super.initState();
@@ -108,12 +108,14 @@ class _StudyPtScreenState extends State<StudyPtScreen> {
                 _sendMessage();
               },
             ),
-            TextButton(
-                onPressed: () {
-                  _isImageSearch = true;
-                  _sendMessage();
-                },
-                child: const Text("Generate Image"))
+            // TextButton(
+            //     onPressed: () {
+            //       _isImageSearch = true;
+            //       _sendMessage();
+            //     },
+            //     child: const Text("Generate"), style: ButtonStyle(
+            //   textStyle: MaterialStatePropertyAll(TextStyle(fontSize: 12))
+            // ),)
           ],
         ),
       ],

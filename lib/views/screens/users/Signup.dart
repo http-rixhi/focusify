@@ -16,7 +16,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   final _username = TextEditingController();
   final Name = TextEditingController();
   final _password = TextEditingController();
-  final Otp = TextEditingController();
+  // final Otp = TextEditingController();
 
   void showEmailNotExistSnackBar(BuildContext context, String message) {
     ScaffoldMessenger.of(context).showSnackBar(
@@ -80,12 +80,12 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                login_field(
-                  controller: Otp,
-                  hint_text: "OTP",
-                  obscuretext: false,
-                  SendButton: true,
-                ),
+                // login_field(
+                //   controller: Otp,
+                //   hint_text: "OTP",
+                //   obscuretext: false,
+                //   SendButton: true,
+                // ),
                 const SizedBox(
                   height: 15,
                 ),

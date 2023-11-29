@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:network_image_search/network_image_search.dart';
 import 'package:wikipedia/wikipedia.dart';
+
+import '../../widgets/Colors.dart';
 
 class HomeScreenWiki extends StatefulWidget {
   const HomeScreenWiki({super.key});
@@ -14,7 +17,6 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
 
   bool _loading = false;
   List<WikipediaSearch> _data = [];
-
 
   @override
   void initState() {
@@ -31,8 +33,25 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
         title: TextField(
           controller: _controller,
           decoration: InputDecoration(
-            hintText: 'Search...',
-            suffixIcon: IconButton(onPressed: getLandingData, icon: Icon(Icons.search_rounded))
+            border: OutlineInputBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
+            ),
+            hintText: "What You Want to learn ?",
+            hintStyle: TextStyle(color: tealLevel5),
+            suffixIcon: IconButton(
+              onPressed: getLandingData,
+              icon: Icon(Icons.search),
+              color: tealLevel3,
+            ),
+            focusColor: Colors.white,
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: tealLevel3),
+              borderRadius: BorderRadius.all(
+                Radius.circular(10),
+              ),
+            ),
           ),
         ),
       ),
@@ -91,6 +110,12 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
                     children: [
                       Text(_data[index].title!,style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
                       const SizedBox(height: 10),
+                      Unsplash(
+                        width: '720',
+                        height: '360',
+                        category: 'programming',
+                      ),
+                      const SizedBox(height: 10),
                       Text(_data[index].snippet!),
                     ],
                   ),
@@ -98,6 +123,7 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
               ),
             ),
           ),
+
           Visibility(
             visible: _loading,
             child: Container(
@@ -124,7 +150,6 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
         _data = result!.query!.search!;
       });
     }catch(e){
-      print(e);
       setState((){
         _loading = false;
       });

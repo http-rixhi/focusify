@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dnd/flutter_dnd.dart';
+import 'package:focusify/views/widgets/bottomBar.dart';
 
 class DndPopup extends StatefulWidget {
   const DndPopup({super.key});
@@ -119,11 +120,15 @@ class _DndPopupState extends State<DndPopup> with WidgetsBindingObserver {
           ElevatedButton(onPressed: () async{
             // bool? isDndEnabled = await FlutterDnd.isNotificationPolicyAccessGranted;
             if (await FlutterDnd.isNotificationPolicyAccessGranted ?? true) {
-              await FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE); // Turn on DND - All notifications are suppressed.
+              await FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
             } else {
               FlutterDnd.gotoPolicySettings();
             }
-          }, child: Text('Yes'))
+          }, child: Text('Yes')),
+          ElevatedButton(onPressed: () {
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
+          }, child: Text('No'))
         ],
             ),
       );

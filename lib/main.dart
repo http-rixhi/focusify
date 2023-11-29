@@ -19,12 +19,6 @@ void main() async {
   return runApp(const MyApp());
 }
 
-// Future main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await dotenv.load(fileName: ".env");
-//   runApp(const MyApp());
-// }
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -35,6 +29,7 @@ class MyApp extends StatelessWidget {
           colorScheme: const ColorScheme.dark(
               background: darkLevel1, brightness: Brightness.dark
           ),
+          fontFamily: 'Open Sans'
         ),
         debugShowCheckedModeBanner: false,
         home: StreamBuilder(
