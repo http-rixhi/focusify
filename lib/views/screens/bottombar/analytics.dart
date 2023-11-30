@@ -47,22 +47,6 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   SizedBox(
                     width: 55,
                     height: 34,
-                    // child: TextButton(
-                    //   onPressed: () {
-                    //     setState(() {
-                    //       showAvg = !showAvg;
-                    //     });
-                    //   },
-                    //   child: Text(
-                    //     'avg',
-                    //     style: TextStyle(
-                    //       fontSize: 12,
-                    //       color: showAvg
-                    //           ? Colors.white.withOpacity(0.5)
-                    //           : Colors.white,
-                    //     ),
-                    //   ),
-                    // ),
                   ),
                 ],
               ),

@@ -2,11 +2,12 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:focusify/views/widgets/chatmessage.dart';
 import 'package:focusify/views/widgets/threedots.dart';
 import 'package:velocity_x/velocity_x.dart';
 
+
+const apiKey = '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';
 
 class StudyPtScreen extends StatefulWidget {
   const StudyPtScreen({super.key});

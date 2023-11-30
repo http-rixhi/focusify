@@ -4,7 +4,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:focusify/views/screens/users/Signin.dart';
 import 'package:focusify/views/widgets/Colors.dart';
-import 'package:focusify/views/widgets/bottomBar.dart';
 import 'package:focusify/views/widgets/dnd_popup.dart';
 import 'firebase_options.dart';
 

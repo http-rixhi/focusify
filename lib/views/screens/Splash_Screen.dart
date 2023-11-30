@@ -2,8 +2,18 @@
 
 import 'dart:async';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:focusify/firebase_options.dart';
 import 'package:focusify/views/screens/users/Signin.dart';
+import 'package:focusify/views/widgets/dnd_popup.dart';
+
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+}
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -28,9 +38,23 @@ class _SplashScreenState extends State<SplashScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.black,
-      body: Center(
-        child: Image.asset('assets/images/logo.png'),
+      body: Column(
+        children: [
+          Center(
+            child: Image.asset('assets/images/logo.png'),
+          ),
+    StreamBuilder(
+    stream: FirebaseAuth.instance.authStateChanges(),
+    builder: (context, snapshot) {
+    if (snapshot.hasData) {
+    return const DndPopup();
+    } else {
+    return const SignInScreen();
+    }
+    })
+        ],
       ),
+
     );
   }
 }

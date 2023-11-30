@@ -25,7 +25,6 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
     super.initState();
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

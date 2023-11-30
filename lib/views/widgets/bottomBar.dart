@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:fluttericon/elusive_icons.dart';
 import 'package:focusify/views/screens/bottombar/analytics.dart';
-import 'package:focusify/views/screens/bottombar/home_screen.dart';
 
 import 'package:focusify/views/screens/bottombar/homescreen.dart';
 import 'package:focusify/views/screens/bottombar/studypt_screen.dart';
@@ -123,9 +121,11 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
                     Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
                   }, child: Text('Profile')),
                 ),
-                const PopupMenuItem(
+                PopupMenuItem(
                   value: 1,
-                  child: Text('Analysis'),
+                  child: TextButton(onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsScreen()));
+                  }, child: Text('Analysis')),
                 ),
                 const PopupMenuItem(
                   value: 2,

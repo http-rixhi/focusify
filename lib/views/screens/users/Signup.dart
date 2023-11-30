@@ -80,12 +80,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 const SizedBox(
                   height: 15,
                 ),
-                // login_field(
-                //   controller: Otp,
-                //   hint_text: "OTP",
-                //   obscuretext: false,
-                //   SendButton: true,
-                // ),
                 const SizedBox(
                   height: 15,
                 ),

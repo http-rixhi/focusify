@@ -1,5 +1,3 @@
-// ignore_for_file: file_names
-
 import 'package:flutter/material.dart';
 import 'package:focusify/views/models/channel_model.dart';
 import 'package:focusify/views/models/video_model.dart';
