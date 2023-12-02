@@ -1,4 +1,6 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:focusify/views/widgets/Colors.dart';
@@ -114,57 +116,6 @@ class ProfileView extends StatelessWidget {
             //       letterSpacing: -2,
             //       color: const Color(0xff70808d)),
             // ),
-            const Padding(
-              padding: EdgeInsets.all(24.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      Text(
-                        "Video Watch:",
-                        style:
-                            TextStyle(color: Color(0xff4fd6d9), fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        "23",
-                        style: TextStyle(color: Color(0xff70808d)),
-                      )
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        "Average Time:",
-                        style:
-                            TextStyle(color: Color(0xff4fd6d9), fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text("4 Min", style: TextStyle(color: Color(0xff70808d)))
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      Text(
-                        "Area",
-                        style:
-                            TextStyle(color: Color(0xff4fd6d9), fontSize: 18),
-                      ),
-                      SizedBox(
-                        height: 5,
-                      ),
-                      Text("Technology",
-                          style: TextStyle(color: Color(0xff70808d)))
-                    ],
-                  ),
-                ],
-              ),
-            ),
             const SizedBox(
               height: 30,
             ),

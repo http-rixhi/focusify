@@ -1,3 +1,6 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:focusify/views/screens/users/Signup.dart';

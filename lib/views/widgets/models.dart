@@ -1,6 +1,7 @@
-// Model classes for the chat app
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
 
-// conversations include multiple messages
+
 class Conversation {
   final List<Message> messages;
   String title;

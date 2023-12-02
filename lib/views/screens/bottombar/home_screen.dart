@@ -1,7 +1,9 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:focusify/views/screens/bottombar/content.dart';
 import 'package:focusify/views/widgets/Colors.dart';
 
 class HomeScreen extends StatefulWidget {

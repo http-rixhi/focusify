@@ -1,3 +1,6 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'package:flutter/material.dart';
 
 const darkLevel1 = Color(0xAA001632);

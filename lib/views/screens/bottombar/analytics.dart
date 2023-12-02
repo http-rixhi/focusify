@@ -1,3 +1,6 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +79,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                                 ],
                               ),
                             ),
-                            Text('40:16:14', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
+                            Text('12:16:14', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),),
                             SizedBox(height: 11,),
                           ],
                         ),

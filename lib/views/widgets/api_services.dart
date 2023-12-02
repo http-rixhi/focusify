@@ -1,3 +1,6 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'dart:convert';
 import 'dart:io';
 import 'package:focusify/views/models/channel_model.dart';

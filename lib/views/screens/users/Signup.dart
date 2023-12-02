@@ -1,8 +1,9 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:focusify/views/screens/bottombar/home_screen.dart';
 import 'package:focusify/views/screens/users/Signin.dart';
-import 'package:focusify/views/widgets/models.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SignUpScreen extends StatefulWidget {

@@ -1,3 +1,6 @@
+// BSD 3-Clause License
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+
 import 'package:flutter/material.dart';
 import 'package:network_image_search/network_image_search.dart';
 import 'package:wikipedia/wikipedia.dart';
