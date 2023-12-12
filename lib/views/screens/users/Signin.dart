@@ -95,21 +95,6 @@ class _SignInScreenState extends State<SignInScreen> {
                     }
                   },
 
-                  // {
-                  //   FirebaseAuth.instance
-                  //       .signInWithEmailAndPassword(
-                  //           email: _email.text, password: _password.text)
-                  //       .then(
-                  //         (value) => Navigator.push(
-                  //           context,
-                  //           MaterialPageRoute(
-                  //             builder: (context) => const BottomBarWidget(),
-                  //           ),
-                  //         ),
-                  //       )
-                  //       .onError(
-                  //           (error, stackTrace) => print("$error".toString()));
-                  // },
                   style: ElevatedButton.styleFrom(
                       backgroundColor: Colors.green, elevation: 7),
                   child: const Text(

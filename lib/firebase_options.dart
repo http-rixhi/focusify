@@ -1,5 +1,5 @@
 // BSD 3-Clause License
-// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
+// Copyright (c) 2023, Rishi Raj & Pushpendra Baswalh
 
 
 import 'package:firebase_core/firebase_core.dart' show FirebaseOptions;

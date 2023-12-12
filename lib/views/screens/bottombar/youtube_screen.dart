@@ -4,7 +4,7 @@
 import 'package:flutter/material.dart';
 import 'package:focusify/views/models/channel_model.dart';
 import 'package:focusify/views/models/video_model.dart';
-import 'package:focusify/views/screens/video_screen.dart';
+import 'package:focusify/views/widgets/video_screen.dart';
 import 'package:focusify/views/widgets/Colors.dart';
 import 'package:focusify/views/widgets/api_services.dart';
 
