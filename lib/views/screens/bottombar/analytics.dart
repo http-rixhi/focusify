@@ -4,7 +4,7 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:focusify/views/widgets/indicator.dart';
+import 'package:concentrate_plus/views/widgets/indicator.dart';
 
 
 class AnalyticsScreen extends StatefulWidget {

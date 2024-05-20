@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_dnd/flutter_dnd.dart';
-import 'package:focusify/views/widgets/bottomBar.dart';
+import 'package:concentrate_plus/views/widgets/bottomBar.dart';
 
 class DndPopup extends StatefulWidget {
   const DndPopup({super.key});

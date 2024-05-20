@@ -1,6 +1,3 @@
-// BSD 3-Clause License
-// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
-
 import 'package:flutter/material.dart';
 import 'package:network_image_search/network_image_search.dart';
 import 'package:wikipedia/wikipedia.dart';
@@ -111,12 +108,12 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Text(_data[index].title!,style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 18),),
-                      const SizedBox(height: 10),
-                      Unsplash(
-                        width: '720',
-                        height: '360',
-                        category: 'programming',
-                      ),
+                      // const SizedBox(height: 10),
+                      // Unsplash(
+                      //   width: '720',
+                      //   height: '360',
+                      //   category: 'programming',
+                      // ),
                       const SizedBox(height: 10),
                       Text(_data[index].snippet!),
                     ],

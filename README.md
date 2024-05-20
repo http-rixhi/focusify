@@ -1,4 +1,4 @@
-# focusify
+# concentrate_plus
 
 A new Flutter project.
 

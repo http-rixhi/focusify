@@ -5,8 +5,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
-import 'package:focusify/views/widgets/chatmessage.dart';
-import 'package:focusify/views/widgets/threedots.dart';
+import 'package:concentrate_plus/views/widgets/chatmessage.dart';
+import 'package:concentrate_plus/views/widgets/threedots.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 

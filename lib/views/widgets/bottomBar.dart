@@ -1,17 +1,17 @@
-// BSD 3-Clause License
-// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
-
+import 'package:concentrate_plus/views/screens/sidebar/quizzes.dart';
+import 'package:concentrate_plus/views/screens/sidebar/study_material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fluttericon/elusive_icons.dart';
-import 'package:focusify/views/screens/bottombar/analytics.dart';
+import 'package:concentrate_plus/views/screens/bottombar/analytics.dart';
 
-import 'package:focusify/views/screens/bottombar/homescreen.dart';
-import 'package:focusify/views/screens/bottombar/studypt_screen.dart';
-import 'package:focusify/views/screens/bottombar/youtube_screen.dart';
-import 'package:focusify/views/screens/sidebar/Profile.dart';
-import 'package:focusify/views/screens/users/Signin.dart';
-import 'package:focusify/views/widgets/Colors.dart';
+import 'package:concentrate_plus/views/screens/bottombar/homescreen.dart';
+import 'package:concentrate_plus/views/screens/bottombar/studypt_screen.dart';
+import 'package:concentrate_plus/views/screens/bottombar/youtube_screen.dart';
+import 'package:concentrate_plus/views/screens/sidebar/Profile.dart';
+import 'package:concentrate_plus/views/screens/users/Signin.dart';
+import 'package:concentrate_plus/views/widgets/Colors.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -97,8 +97,8 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "FOCUSIFY",
-              style: GoogleFonts.leagueSpartan(fontSize: 47, color: Colors.blueAccent),
+              "Concentrate+",
+              style: GoogleFonts.leagueSpartan(fontSize: 37, color: Colors.blueAccent),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 19),
@@ -110,6 +110,12 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
           ],
         ),
         actions: [
+          Row(
+            children: [
+              IconButton(onPressed: () {}, icon: Icon(FontAwesome5.coins, color: Colors.yellow,)),
+              Text('0', style: TextStyle(fontWeight: FontWeight.bold),)
+            ],
+          ),
           PopupMenuButton(
             color: darkLevel1,
             icon: const Icon(
@@ -120,32 +126,54 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
               return [
                 PopupMenuItem(
                   value: 0,
-                  child: TextButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
-                  }, child: Text('Profile')),
+                  child: Text('Profile'),
                 ),
                 PopupMenuItem(
                   value: 1,
-                  child: TextButton(onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsScreen()));
-                  }, child: Text('Analysis')),
+                  child: Text('Analysis'),
                 ),
                 const PopupMenuItem(
                   value: 2,
-                  child: Text('Chatbot'),
+                  child: Text('Quizzes'),
                 ),
                 const PopupMenuItem(
                   value: 3,
-                  child: Text('Settings'),
+                  child: Text('Study Material'),
                 ),
                 const PopupMenuItem(
                   value: 4,
+                  child: Text('Redeem'),
+                ),
+                const PopupMenuItem(
+                  value: 5,
+                  child: Text('Reminders'),
+                ),
+                const PopupMenuItem(
+                  value: 6,
                   child: Text('Logout'),
                 ),
               ];
             },
             onSelected: (value) {
-              if (value == 4) {
+              if (value == 0) {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
+              }
+              if (value == 1) {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsScreen()));
+              }
+              if (value == 2) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const QuizScreen()),
+                );
+              }
+              if (value == 3) {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const StudyMaterialScreen()),
+                );
+              }
+              if (value == 5) {
                 signOut();
                 Navigator.pushReplacement(
                   context,

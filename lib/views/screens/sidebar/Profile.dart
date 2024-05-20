@@ -3,7 +3,7 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:focusify/views/widgets/Colors.dart';
+import 'package:concentrate_plus/views/widgets/Colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 

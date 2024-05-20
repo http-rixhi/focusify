@@ -4,7 +4,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:focusify/views/widgets/Colors.dart';
+import 'package:concentrate_plus/views/widgets/Colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -32,7 +32,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 //     padding:
                 //         const EdgeInsets.symmetric(horizontal: 8, vertical: 0),
                 //     child: Text(
-                //       "Focusify",
+                //       "concentrate_plus",
                 //       style: GoogleFonts.aboreto(fontSize: 40),
                 //     ),
                 //   ),
