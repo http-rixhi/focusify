@@ -1,3 +1,4 @@
+import 'package:concentrate_plus/main.dart';
 import 'package:concentrate_plus/views/screens/sidebar/quizzes.dart';
 import 'package:concentrate_plus/views/screens/sidebar/study_material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -30,7 +31,7 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
   final List<Widget> _widgetOptions = const <Widget>[
     HomeScreenWiki(),
     YoutubeScreen(),
-    StudyPtScreen(),
+    studyAI(),
     AnalyticsScreen()
   ];
 
