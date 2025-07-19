@@ -3,7 +3,7 @@
 
 
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:concentrate_plus/views/widgets/Colors.dart';
+import 'package:focusify/views/widgets/Colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 
@@ -79,6 +79,11 @@ class ProfileView extends StatelessWidget {
 
     return SafeArea(
         child: Scaffold(
+          appBar: AppBar(
+            centerTitle: true,
+            backgroundColor: Colors.black12,
+            title: Text('Profile'),
+          ),
       // backgroundColor: Color(0xff53585b),
       backgroundColor: Colors.transparent,
       body: SingleChildScrollView(

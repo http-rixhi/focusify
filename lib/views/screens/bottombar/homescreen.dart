@@ -20,7 +20,7 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
 
   @override
   void initState() {
-    _controller = TextEditingController(text: "What is Flutter");
+    _controller = TextEditingController(text: "");
     getLandingData();
     super.initState();
   }
@@ -137,7 +137,7 @@ class _HomeScreenWikiState extends State<HomeScreenWiki> {
       ),
     );
   }
-  Future getLandingData()async{
+  Future getLandingData() async {
     try{
       setState((){
         _loading = true;

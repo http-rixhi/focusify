@@ -11,7 +11,7 @@ class QuizScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: darkLevel1,
-        title: Text('Quizzes'),
+        title: const Text('Quizzes'),
       ),
       body: Column(
         children: [
@@ -24,9 +24,9 @@ class QuizScreen extends StatelessWidget {
                   color: Colors.green,
                   borderRadius: BorderRadius.circular(8)
               ),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text('Data Structure', style: TextStyle(fontSize: 22),),
                 ),
               ),
@@ -41,9 +41,9 @@ class QuizScreen extends StatelessWidget {
                   color: Colors.pink,
                   borderRadius: BorderRadius.circular(8)
               ),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text('Maths', style: TextStyle(fontSize: 22),),
                 ),
               ),
@@ -58,9 +58,9 @@ class QuizScreen extends StatelessWidget {
                   color: Colors.purple,
                   borderRadius: BorderRadius.circular(8)
               ),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text('Cyber Security', style: TextStyle(fontSize: 22),),
                 ),
               ),
@@ -70,7 +70,7 @@ class QuizScreen extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(0, 8, 8, 8),
             child: InkWell(
               onTap: () {
-                showDialog(context: context, builder: (context) => AlertDialog(title: Text('No quizzes available'),));
+                showDialog(context: context, builder: (context) => const AlertDialog(title: Text('No quizzes available'),));
               },
               child: Container(
                 height: 85,
@@ -79,9 +79,9 @@ class QuizScreen extends StatelessWidget {
                     color: Colors.blue,
                     borderRadius: BorderRadius.circular(8)
                 ),
-                child: Center(
+                child: const Center(
                   child: Padding(
-                    padding: const EdgeInsets.all(12.0),
+                    padding: EdgeInsets.all(12.0),
                     child: Text('Operating System', style: TextStyle(fontSize: 22),),
                   ),
                 ),
@@ -97,9 +97,9 @@ class QuizScreen extends StatelessWidget {
                   color: Colors.yellow,
                   borderRadius: BorderRadius.circular(8)
               ),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text('Python', style: TextStyle(fontSize: 22),),
                 ),
               ),
@@ -114,9 +114,9 @@ class QuizScreen extends StatelessWidget {
                   color: Colors.teal,
                   borderRadius: BorderRadius.circular(8)
               ),
-              child: Center(
+              child: const Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(12.0),
+                  padding: EdgeInsets.all(12.0),
                   child: Text('Object Oriented Programming', style: TextStyle(fontSize: 22),),
                 ),
               ),

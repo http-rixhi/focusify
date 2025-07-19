@@ -1,12 +1,11 @@
 // BSD 3-Clause License
 // Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
 
-// import 'dart:nativewrappers/_internal/vm/lib/core_patch.dart';
-
+import 'package:firebase_ai/firebase_ai.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_markdown/flutter_markdown.dart';
+import 'package:flutter_tts/flutter_tts.dart';
 import 'package:fluttericon/font_awesome5_icons.dart';
-import 'package:google_generative_ai/google_generative_ai.dart';
+import 'package:gpt_markdown/gpt_markdown.dart';
 import 'package:markdown/markdown.dart' as md;
 
 class studyAI extends StatefulWidget {
@@ -20,83 +19,72 @@ class _studyAIState extends State<studyAI> {
   TextEditingController message = TextEditingController();
   var _data;
 
-  var model = GenerativeModel(
-    model: 'gemini-pro',
-    apiKey: 'AIzaSyBSwSQ0NQ_bNiP9LlsKqyES6YATYaEBtdA',
-  );
+  final model =
+  FirebaseAI.googleAI().generativeModel(model: 'gemini-2.0-flash');
 
   @override
   Widget build(BuildContext context) {
     String markdownText = _data.toString();
-    String plainText = markdownToPlainText(markdownText);
-    if(_data == null) {
-      _data = "Heyyy, I'm your doubt assistant. Ask me anything...\n"
-          """
-                 _______
-               _/       \\_
-              / |       | \\
-             /  |__   __|  \\
-           |__/((o| |o))\\__|
-            |      | |      |
-            |\\     |_|     /|
-            | \\           / |
-             \\| /   _   \\ |/
-              \\ | \\___/ | /
-               \\_________/
-               _|_____|_
-           ____|_________|____
-          /                   \\ 
-          """;
-    }
+    markdownToPlainText(markdownText);
+    _data ??= "🤖 Heyyy, I'm FocusAI your doubt assistant. Ask me your doubts...";
 
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(onPressed: textToSpeech, icon: const Icon(FontAwesome5.play, size: 15,)),
+              IconButton(onPressed: () {
+                FlutterTts().pause();
+              }, icon: const Icon(FontAwesome5.pause, size: 15,)),
+              IconButton(onPressed: () {
+                FlutterTts().stop();
+              }, icon: const Icon(FontAwesome5.stop, size: 15,)),
+            ],
+          ),
           Expanded(
-            child: SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: SizedBox(
-                  height: 500,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      border: Border.all(color: Colors.white38),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(
-                        horizontal: 15,
-                        vertical: 8
-                      ),
-                      child: Markdown(data: _data)
-                    ),
+            flex: 1,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 2),
+              decoration: BoxDecoration(
+                border: Border.all(color: Colors.white38),
+              ),
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 15,
+                    vertical: 8,
                   ),
+                  child: GptMarkdown(_data),
                 ),
               ),
             ),
           ),
 
           ListTile(
-            leading: Icon(FontAwesome5.robot),
+            leading: const Icon(FontAwesome5.robot),
             title: TextField(
               controller: message,
-              decoration: InputDecoration(
+              decoration: const InputDecoration(
                   hintText: "Ask your Doubts...",
                   ),
             ),
             trailing: IconButton(onPressed: () {
               setState(() {
-                _data = "Searching for your query...";
+                _data = "Searching for your query, please wait...";
               });
-              GetResults();
-            }, icon: Icon(Icons.send)),
+              textToSpeech();
+              getResults();
+            }, icon: const Icon(Icons.send)),
           ),
         ],
       ),
     );
   }
 
-  void GetResults() async {
+  void getResults() async {
     var prompt = message.text;
     var content = [Content.text(prompt)];
     var response = await model.generateContent(content);
@@ -109,5 +97,14 @@ class _studyAIState extends State<studyAI> {
     final document = md.Document();
     final parsed = document.parseInline(markdown);
     return parsed.map((e) => e.textContent).join();
+  }
+
+  // Text to Speech(tts) function for speaking the ai response
+  textToSpeech() async {
+    FlutterTts flutterTts = FlutterTts();
+    await flutterTts.setLanguage("en-US");
+    await flutterTts.setPitch(0.9);
+    await flutterTts.setSpeechRate(0.7);
+    await flutterTts.speak(_data.toString());
   }
 }

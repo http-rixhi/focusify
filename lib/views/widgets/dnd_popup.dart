@@ -1,6 +1,9 @@
+import 'package:do_not_disturb/do_not_disturb_plugin.dart';
+import 'package:do_not_disturb/types.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dnd/flutter_dnd.dart';
-import 'package:concentrate_plus/views/widgets/bottomBar.dart';
+import 'package:focusify/views/widgets/bottomBar.dart';
+
+import 'Colors.dart';
 
 class DndPopup extends StatefulWidget {
   const DndPopup({super.key});
@@ -9,27 +12,40 @@ class DndPopup extends StatefulWidget {
   State<DndPopup> createState() => _DndPopupState();
 }
 
-class _DndPopupState extends State<DndPopup> with WidgetsBindingObserver {
+class _DndPopupState extends State<DndPopup> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AlertDialog(
-        title: Text('DND Option'),
-        content: Text('Would you like to turn on DND?'),
-        actions: <Widget>[
-          ElevatedButton(onPressed: () async{
-            if (await FlutterDnd.isNotificationPolicyAccessGranted ?? true) {
-              await FlutterDnd.setInterruptionFilter(FlutterDnd.INTERRUPTION_FILTER_NONE);
+      body: AlertDialog(
+        backgroundColor: darkLevel2,
+        title: Text('DND'),
+        content: Text("Do you want to enable DND?"),
+        actions: [
+          ElevatedButton(onPressed: () {
+            // Navigator.pop(context);
+            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
+          }, child: Text("No")),
+          ElevatedButton(onPressed: () async {
+            final dndPlugin = DoNotDisturbPlugin();
+
+            // Set DND mode (requires permission)
+            if (await dndPlugin.isNotificationPolicyAccessGranted()) {
+              // enable DND
+              await dndPlugin.setInterruptionFilter(InterruptionFilter.priority);
               Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
             } else {
-              FlutterDnd.gotoPolicySettings();
+              // Guide user to grant permission
+              await dndPlugin.openNotificationPolicyAccessSettings();
+              // Inform user to grant permission and return to the app
             }
-          }, child: Text('Yes')),
-          ElevatedButton(onPressed: () {
-            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BottomBarWidget()));
-          }, child: Text('No'))
+          }, child: Text("Yes"))
         ],
-            ),
-      );
+      ),
+    );
+  }
+
+  void DndButton() async {
+
   }
 }

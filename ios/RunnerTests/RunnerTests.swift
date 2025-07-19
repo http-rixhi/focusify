@@ -1,6 +1,3 @@
-// BSD 3-Clause License
-// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
-
 import Flutter
 import UIKit
 import XCTest

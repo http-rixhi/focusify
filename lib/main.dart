@@ -5,9 +5,9 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:concentrate_plus/views/screens/users/Signin.dart';
-import 'package:concentrate_plus/views/widgets/Colors.dart';
-import 'package:concentrate_plus/views/widgets/dnd_popup.dart';
+import 'package:focusify/views/screens/users/Signin.dart';
+import 'package:focusify/views/widgets/Colors.dart';
+import 'package:focusify/views/widgets/dnd_popup.dart';
 import 'firebase_options.dart';
 
 Future<void> StudyPtScreen() async {
@@ -28,10 +28,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         theme: ThemeData(
-          colorScheme: const ColorScheme.dark(
-              background: darkLevel1, brightness: Brightness.dark
-          ),
-          fontFamily: 'Open Sans'
+            colorScheme: const ColorScheme.dark(
+                background: darkLevel1, brightness: Brightness.dark
+            ),
+            fontFamily: 'Open Sans'
         ),
         debugShowCheckedModeBanner: false,
         home: StreamBuilder(

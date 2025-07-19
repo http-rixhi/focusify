@@ -4,7 +4,9 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:concentrate_plus/views/widgets/indicator.dart';
+import 'package:focusify/views/widgets/indicator.dart';
+
+import '../../widgets/Colors.dart';
 
 
 class AnalyticsScreen extends StatefulWidget {
@@ -21,14 +23,19 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: darkLevel1,
+        title: const Text('Analytics'),
+      ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 8),
+        padding: const EdgeInsets.symmetric(horizontal: 8),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 18),
+              const Padding(
+                padding: EdgeInsets.only(top: 18),
                 child: Center(child: Text('Studying Progress', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
               ),
               Stack(
@@ -47,14 +54,14 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 55,
                     height: 34,
                   ),
                 ],
               ),
-              Padding(
-                padding: const EdgeInsets.only(
+              const Padding(
+                padding: EdgeInsets.only(
                   top: 13,
                   bottom: 8
                 ),
@@ -67,10 +74,10 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Colors.black54),
-                        child: Column(
+                        child: const Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
                                   Icon(CupertinoIcons.clock),
@@ -91,10 +98,10 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                       padding: const EdgeInsets.all(8.0),
                       child: Container(
                         decoration: BoxDecoration(borderRadius: BorderRadius.circular(12), color: Colors.black54),
-                        child: Column(
+                        child: const Column(
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(8.0),
                               child: Row(
                                 children: [
                                   Icon(CupertinoIcons.clock),
@@ -114,8 +121,8 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
               ),
 
 
-              Padding(
-                padding: const EdgeInsets.only(top: 28),
+              const Padding(
+                padding: EdgeInsets.only(top: 28),
                 child: Center(child: Text('Day Wise Activity Chart', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),)),
               ),
 
@@ -153,7 +160,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   ),
                 ),
               ),
-              Column(
+              const Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
@@ -176,7 +183,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
 
                   Indicator(
                     color: Colors.yellow,
-                    text: 'Wednsday',
+                    text: 'Wednesday',
                     isSquare: true,
                   ),
                   SizedBox(
@@ -184,7 +191,7 @@ class _AnalyticsScreenState extends State<AnalyticsScreen> {
                   ),
                   Indicator(
                     color: Colors.purple,
-                    text: 'Thrusday',
+                    text: 'Thursday',
                     isSquare: true,
                   ),
                   SizedBox(
@@ -264,10 +271,7 @@ Widget bottomTitleWidgets(double value, TitleMeta meta) {
       break;
   }
 
-  return SideTitleWidget(
-    axisSide: meta.axisSide,
-    child: text,
-  );
+  return SideTitleWidget(meta: meta,child: text);
 }
 
 Widget leftTitleWidgets(double value, TitleMeta meta) {
@@ -313,12 +317,12 @@ LineChartData mainData() {
         );
       },
     ),
-    titlesData: FlTitlesData(
+    titlesData: const FlTitlesData(
       show: true,
-      rightTitles: const AxisTitles(
+      rightTitles: AxisTitles(
         sideTitles: SideTitles(showTitles: false),
       ),
-      topTitles: const AxisTitles(
+      topTitles: AxisTitles(
         sideTitles: SideTitles(showTitles: false),
       ),
       bottomTitles: AxisTitles(
@@ -402,7 +406,7 @@ LineChartData avgData() {
         );
       },
     ),
-    titlesData: FlTitlesData(
+    titlesData: const FlTitlesData(
       show: true,
       bottomTitles: AxisTitles(
         sideTitles: SideTitles(
@@ -420,10 +424,10 @@ LineChartData avgData() {
           interval: 1,
         ),
       ),
-      topTitles: const AxisTitles(
+      topTitles: AxisTitles(
         sideTitles: SideTitles(showTitles: false),
       ),
-      rightTitles: const AxisTitles(
+      rightTitles: AxisTitles(
         sideTitles: SideTitles(showTitles: false),
       ),
     ),

@@ -3,8 +3,8 @@
 
 import 'dart:convert';
 import 'dart:io';
-import 'package:concentrate_plus/views/models/channel_model.dart';
-import 'package:concentrate_plus/views/models/video_model.dart';
+import 'package:focusify/views/models/channel_model.dart';
+import 'package:focusify/views/models/video_model.dart';
 import 'package:http/http.dart' as http;
 
 class APIService {

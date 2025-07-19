@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:concentrate_plus/views/models/channel_model.dart';
-import 'package:concentrate_plus/views/models/video_model.dart';
-import 'package:concentrate_plus/views/widgets/video_screen.dart';
-import 'package:concentrate_plus/views/widgets/Colors.dart';
-import 'package:concentrate_plus/views/widgets/api_services.dart';
+import 'package:focusify/views/models/channel_model.dart';
+import 'package:focusify/views/models/video_model.dart';
+import 'package:focusify/views/widgets/video_screen.dart';
+import 'package:focusify/views/widgets/Colors.dart';
+import 'package:focusify/views/widgets/api_services.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 class YoutubeScreen extends StatefulWidget {

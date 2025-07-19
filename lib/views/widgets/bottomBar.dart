@@ -1,18 +1,17 @@
-import 'package:concentrate_plus/main.dart';
-import 'package:concentrate_plus/views/screens/sidebar/quizzes.dart';
-import 'package:concentrate_plus/views/screens/sidebar/study_material.dart';
+import 'package:fluttericon/elusive_icons.dart';
+import 'package:fluttericon/font_awesome5_icons.dart';
+import 'package:focusify/views/screens/bottombar/others_screen.dart';
+import 'package:focusify/views/screens/sidebar/quizzes.dart';
+import 'package:focusify/views/screens/sidebar/study_material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:fluttericon/elusive_icons.dart';
-import 'package:concentrate_plus/views/screens/bottombar/analytics.dart';
-
-import 'package:concentrate_plus/views/screens/bottombar/homescreen.dart';
-import 'package:concentrate_plus/views/screens/bottombar/studypt_screen.dart';
-import 'package:concentrate_plus/views/screens/bottombar/youtube_screen.dart';
-import 'package:concentrate_plus/views/screens/sidebar/Profile.dart';
-import 'package:concentrate_plus/views/screens/users/Signin.dart';
-import 'package:concentrate_plus/views/widgets/Colors.dart';
-import 'package:fluttericon/font_awesome5_icons.dart';
+import 'package:focusify/views/screens/bottombar/analytics.dart';
+import 'package:focusify/views/screens/bottombar/homescreen.dart';
+import 'package:focusify/views/screens/bottombar/studypt_screen.dart';
+import 'package:focusify/views/screens/bottombar/youtube_screen.dart';
+import 'package:focusify/views/screens/sidebar/Profile.dart';
+import 'package:focusify/views/screens/users/Signin.dart';
+import 'package:focusify/views/widgets/Colors.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:google_nav_bar/google_nav_bar.dart';
@@ -32,7 +31,7 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
     HomeScreenWiki(),
     YoutubeScreen(),
     studyAI(),
-    AnalyticsScreen()
+    OthersScreen()
   ];
 
   final FirebaseAuth auth = FirebaseAuth.instance;
@@ -45,64 +44,67 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
     return Scaffold(
       bottomNavigationBar: SingleChildScrollView(
         scrollDirection: Axis.horizontal,
-        child: Expanded(
+        child: Container(
+          color: Colors.transparent,
+          transform: Matrix4.translationValues(10, -1, 0),
           child: Container(
-            color: Colors.transparent.withOpacity(0.0),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 3),
-              child: Container(
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(35), color: darkLevel1),
-                  child: GNav(
-                      gap: 8,
-                      activeColor: Colors.white,
-                      tabBackgroundColor: darkLevel1,
-                      tabs: const [
-                        GButton(
-                          icon: Icons.home,
-                          iconColor: tealColor,
-                          text: "Home",
-                        ),
-                        GButton(
-                          icon: Elusive.youtube,
-                          iconColor: tealColor,
-                          text: "FocusTube",
-                        ),
-                        GButton(
-                          icon: Icons.data_object_outlined,
-                          iconColor: tealColor,
-                          text: "AI Bot",
-                        ),
-                        GButton(
-                          icon: Icons.person,
-                          iconColor: tealColor,
-                          text: "Analytics",
-                        ),
-                      ],
-                      selectedIndex: _selectedIndex,
-                      onTabChange: (index) {
-                        setState(() {
-                          _selectedIndex = index;
-                        });
-                      })),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(30),
+              color: darkLevel5,
             ),
+            child: GNav(
+                gap: 10,
+                activeColor: Colors.white,
+                tabBackgroundColor: darkLevel5,
+                haptic: true,
+                tabBorderRadius: 30,
+                iconSize: 21,
+                curve: Curves.easeInOut,
+                tabs: const [
+                  GButton(
+                    icon: Icons.home,
+                    iconColor: tealColor,
+                    text: "Home",
+                  ),
+                  GButton(
+                    icon: Elusive.youtube,
+                    iconColor: tealColor,
+                    text: "FocusTube",
+                  ),
+                  GButton(
+                    icon: Icons.data_object_outlined,
+                    iconColor: tealColor,
+                    text: "FocusAI",
+                  ),
+                  GButton(
+                    icon: Icons.person,
+                    iconColor: tealColor,
+                    text: "Others",
+                  ),
+                ],
+                selectedIndex: _selectedIndex,
+                onTabChange: (index) {
+                  setState(() {
+                    _selectedIndex = index;
+                  });
+                }),
           ),
         ),
       ),
       body: _widgetOptions.elementAt(_selectedIndex),
       appBar: AppBar(
-        toolbarHeight: 80,
+        toolbarHeight: 58,
         backgroundColor: Colors.transparent,
         automaticallyImplyLeading: false,
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "Concentrate+",
-              style: GoogleFonts.leagueSpartan(fontSize: 37, color: Colors.blueAccent),
+              "FOCUSIFY",
+              style: GoogleFonts.leagueSpartan(fontSize: 35, color: Colors.blueAccent),
             ),
             Padding(
-              padding: const EdgeInsets.only(bottom: 19),
+              padding: const EdgeInsets.only(bottom: 5),
               child: Text(
                 "Distraction-free educational app",
                 style: GoogleFonts.abhayaLibre(fontSize: 14, color: Colors.white),
@@ -113,8 +115,8 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
         actions: [
           Row(
             children: [
-              IconButton(onPressed: () {}, icon: Icon(FontAwesome5.coins, color: Colors.yellow,)),
-              Text('0', style: TextStyle(fontWeight: FontWeight.bold),)
+              IconButton(onPressed: () {}, icon: const Icon(FontAwesome5.coins, color: Colors.yellow,)),
+              const Text('0', style: TextStyle(fontWeight: FontWeight.bold),)
             ],
           ),
           PopupMenuButton(
@@ -125,11 +127,11 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
             ),
             itemBuilder: (context) {
               return [
-                PopupMenuItem(
+                const PopupMenuItem(
                   value: 0,
                   child: Text('Profile'),
                 ),
-                PopupMenuItem(
+                const PopupMenuItem(
                   value: 1,
                   child: Text('Analysis'),
                 ),
@@ -157,10 +159,10 @@ class _BottomBarWidgetState extends State<BottomBarWidget> {
             },
             onSelected: (value) {
               if (value == 0) {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfileView()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfileView()));
               }
               if (value == 1) {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => AnalyticsScreen()));
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => const AnalyticsScreen()));
               }
               if (value == 2) {
                 Navigator.pushReplacement(

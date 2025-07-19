@@ -3,8 +3,8 @@
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:concentrate_plus/views/screens/users/Signup.dart';
-import 'package:concentrate_plus/views/widgets/bottomBar.dart';
+import 'package:focusify/views/screens/users/Signup.dart';
+import 'package:focusify/views/widgets/bottomBar.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toast/toast.dart';
 

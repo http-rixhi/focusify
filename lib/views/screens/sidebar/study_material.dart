@@ -1,4 +1,4 @@
-import 'package:concentrate_plus/views/widgets/upload_file.dart';
+import 'package:focusify/views/widgets/upload_file.dart';
 import 'package:flutter/material.dart';
 
 import '../../widgets/Colors.dart';
