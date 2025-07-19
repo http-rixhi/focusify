@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1076172116234",
+    "project_id": "focusify-2023",
+    "storage_bucket": "focusify-2023.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1076172116234:android:00f8dda0ad0c12d9ba6af3",
+        "android_client_info": {
+          "package_name": "com.example.focusify"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqRMI7f3fjHcEl4Ku_soJF888q2zOZ1Kk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
