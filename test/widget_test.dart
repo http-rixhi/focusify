@@ -1,7 +1,3 @@
-// BSD 3-Clause License
-// Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
-
-
 // This is a basic Flutter widget test.
 //
 // To perform an interaction with a widget in your test, use the WidgetTester
@@ -12,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:concentrate_plus/main.dart';
+import 'package:focusify/main.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

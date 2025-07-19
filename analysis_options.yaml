@@ -1,6 +1,3 @@
-# BSD 3-Clause License
-# Copyright (c) 2023, Rishi Raj & Pushpendra Baswal
-
 # This file configures the analyzer, which statically analyzes Dart code to
 # check for errors, warnings, and lints.
 #
